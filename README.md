@@ -51,6 +51,9 @@ This repository builds upon the methodology and feature engineering proposed in 
 > Chung, H. W., Freitas, R., Cheon, G., & Reed, E. J. (2022). Data-centric framework for crystal structure identification in atomistic simulations using machine learning. Physical Review Materials, 6(4). https://doi.org/10.1103/physrevmaterials.6.043801 
 
 > Freitas, R. (2022, March 2). *DC3 Github Repo*. GitHub. https://github.com/freitas-rodrigo/DC3
+
+The SOP&RSF feature extraction + MLPClassifier has been used from the above credited github repository.
+All data from which the features and ACE descriptor information are credited to Dr. Ryan Sills and Dr. Qianqian Zhao.
 ---
 
 ## Notes
