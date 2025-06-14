@@ -48,9 +48,7 @@ Each pipeline performs the following steps:
 
 This repository builds upon the methodology and feature engineering proposed in the following works:
 
-> Chung, H. W., Freitas, R., Cheon, G., & Reed, E. J. (2022).  
-> *Data-centric framework for crystal structure identification in atomistic simulations using machine learning*.  
-> *Physical Review Materials*, 6(4). https://doi.org/10.1103/PhysRevMaterials.6.043801  
+> Chung, H. W., Freitas, R., Cheon, G., & Reed, E. J. (2022). Data-centric framework for crystal structure identification in atomistic simulations using machine learning. Physical Review Materials, 6(4). https://doi.org/10.1103/physrevmaterials.6.043801 
 
 > Freitas, R. (2022, March 2). *DC3 Github Repo*. GitHub. https://github.com/freitas-rodrigo/DC3
 ---
