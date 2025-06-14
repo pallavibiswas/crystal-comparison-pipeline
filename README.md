@@ -52,9 +52,8 @@ This repository builds upon the methodology and feature engineering proposed in 
 
 > Freitas, R. (2022, March 2). *DC3 Github Repo*. GitHub. https://github.com/freitas-rodrigo/DC3
 
-The SOP & RSF feature extraction pipeline and MLPClassifier training approach are directly adapted from the above GitHub repository.
-
-All data used for SOP, RSF, and ACE descriptor analysis are credited to Dr. Ryan Sills and Dr. Qianqian Zhao.
+The SOP & RSF feature extraction + MLPClassifier has been used and adapted from the above credited github repository.
+All dump file data and ACE descriptor information are credited to Dr. Ryan Sills and Dr. Qianqian Zhao. 
 
 ---
 
