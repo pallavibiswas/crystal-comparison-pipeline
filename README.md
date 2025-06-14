@@ -1,4 +1,4 @@
-# Crystal Structure Classification Pipeline
+# Crystal Comparison Pipeline
 
 This repository contains a side-by-side implementation of two pipelines for crystal structure classification: one based on SOP & RSF descriptors, and the other using ACE descriptors. Both pipelines are benchmarked using a Multi-Layer Perceptron (MLP) classifier with consistent hyperparameter tuning and evaluation procedures.
 
