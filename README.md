@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Crystal Comparison Pipeline
+=======
+# Crystal Structure Classification Pipeline
+>>>>>>> 5031889 (Save local changes before pulling)
 
 This repository contains a side-by-side implementation of two pipelines for crystal structure classification: one based on SOP & RSF descriptors, and the other using ACE descriptors. Both pipelines are benchmarked using a Multi-Layer Perceptron (MLP) classifier with consistent hyperparameter tuning and evaluation procedures.
 
@@ -46,6 +50,7 @@ Each pipeline performs the following steps:
 
 ## Citation / Credit
 
+<<<<<<< HEAD
 This repository builds upon the methodology and feature engineering proposed in the following works:
 
 > Chung, H. W., Freitas, R., Cheon, G., & Reed, E. J. (2022). Data-centric framework for crystal structure identification in atomistic simulations using machine learning. Physical Review Materials, 6(4). https://doi.org/10.1103/physrevmaterials.6.043801 
@@ -55,6 +60,12 @@ This repository builds upon the methodology and feature engineering proposed in 
 The SOP & RSF feature extraction + MLPClassifier has been used and adapted from the above credited github repository.
 
 All dump file data and ACE descriptor information are credited to Dr. Ryan Sills and Dr. Qianqian Zhao. 
+=======
+This repository is built upon the methodology and feature engineering from the following work:
+
+> *[Placeholder for APA citation of Chung’s paper]*  
+> *(Please add full reference here)*
+>>>>>>> 5031889 (Save local changes before pulling)
 
 ---
 
