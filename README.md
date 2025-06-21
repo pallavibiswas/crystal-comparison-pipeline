@@ -62,10 +62,10 @@ This project contains two parallel pipelines for crystal structure classificatio
 
 ## Results Summary
 
-| Feature Type | Accuracy (MLP) | Accuracy (Test) | F1 Score (Avg) | PCA Clustering | Dimensionality |
-|--------------|----------------|----------------|----------------||----------------|----------------|
-| SOP & RSF  (DC3)   | ~88.1% | ~74.9% | ~0.86 | Clear clusters | Lower variance retained |
-| ACE          | ~83.4% | ~90% | ~0.90 | Less separation | Higher variance retained |
+| Feature Type      | Accuracy (MLP) | Accuracy (Test) | F1 Score (Avg) | PCA Clustering     | Dimensionality           |
+|-------------------|----------------|------------------|----------------|---------------------|---------------------------|
+| SOP & RSF (DC3)   | ~88.1%         | ~74.9%           | ~0.86          | Clear clusters      | Lower variance retained   |
+| ACE               | ~83.4%         | ~90.0%           | ~0.90          | Less separation     | Higher variance retained  |
 
 ---
 
