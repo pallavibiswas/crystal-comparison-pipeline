@@ -4,15 +4,15 @@ from sklearn.impute import SimpleImputer
 from sklearn.pipeline import make_pipeline
 from sklearn.neural_network import MLPClassifier
 import joblib
-
-import sys
 from read_functions import read
 
 X = read('data/X_all.dat')
 y = read('data/y_all.dat')
 
-X = X[:340000]
-y = y[:340000]
+split_point = int(0.8 * len(X))
+
+X = X[:split_point]
+y = y[:split_point]
 
 X = SimpleImputer(strategy="mean").fit_transform(X)
 
