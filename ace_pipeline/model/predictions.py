@@ -2,16 +2,16 @@ import numpy as np
 import joblib
 from read_functions import read
 from sklearn.impute import SimpleImputer
+from sklearn.model_selection import train_test_split
 
 X = read('data/X_all.dat')
 y = read('data/y_all.dat')
 
-split_point = int(0.8 * len(X))
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=42)
 
-X_test = X[split_point:]
-y_test = y[split_point:]
-
-X_test = SimpleImputer(strategy="mean").fit_transform(X)
+imputer = SimpleImputer(strategy="mean")
+X_train = imputer.fit_transform(X_train)
+X_test = imputer.transform(X_test)
 
 NN = joblib.load('model/neural_network.pkl')
 

@@ -1,21 +1,22 @@
 import numpy as np
+from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 
-y_true = np.loadtxt('data/y_all.dat').astype(int)
+X = np.loadtxt('data/X_files/X_all.dat').astype(int)
+y = np.loadtxt('data/y_all.dat').astype(int)
 y_pred = np.loadtxt('model/y_pred_all.dat').astype(int)
 
-split_point = int(0.8 * len(y_true))
-y_true = y_true[split_point:]
+_, X_test, _, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=42)
 
 label_names = [0, 1, 2, 3, -1]
 
-def evaluate_model(y_true, y_pred, name):
+def evaluate_model(y_test, y_pred, name):
     print(f"\nEvaluation Report for {name}")
-    accuracy = accuracy_score(y_true, y_pred)
-    clf_report = classification_report(y_true, y_pred, labels=label_names)
-    cnf_matrix = confusion_matrix(y_true, y_pred, labels=label_names)
+    accuracy = accuracy_score(y_test, y_pred)
+    clf_report = classification_report(y_test, y_pred, labels=label_names)
+    cnf_matrix = confusion_matrix(y_test, y_pred, labels=label_names)
 
     with open(f'evaluation/{name.lower()}_eval.txt', 'w') as f:
         f.write(f"\nEvaluation Report for {name}\n")
@@ -34,6 +35,6 @@ def evaluate_model(y_true, y_pred, name):
     plt.savefig(f"evaluation/{name.lower()}_cm.png")
     plt.close()
 
-evaluate_model(y_true, y_pred, "DC3")
+evaluate_model(y_test, y_pred, "DC3")
 
 
