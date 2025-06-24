@@ -13,13 +13,13 @@ This repository contains a side-by-side implementation of two pipelines for crys
 │   ├── features            # Raw ACE descriptor files (large)
 │   ├── model               # Trained MLP model, prediction outputs, and summary logs
 │   ├── evaluation          # Accuracy, confusion matrix plots, classification reports
-│   └── train               # Training scripts, validation splits, and visualization tools
+│   └── train               # Training scripts for hyperparameter tuning and plots 
 ├── dc3_sop_rsf_pipeline
 │   ├── data                # SOP+RSF features, distance cutoffs, alpha cutoffs, evaluation sets, and PCA visualizations
 │   ├── features            # Raw dump files (large)
 │   ├── model               # Trained MLP model, DC3 classifier, prediction outputs, and logs
 │   ├── evaluation          # Accuracy, confusion matrix plots, classification reports
-│   └── train               # Training scripts and visualization tools
+│   └── train               # Training scripts for hyperparameter tuning and plots 
 └── README.md               # Project overview and documentation
 ```
 
@@ -64,8 +64,8 @@ This project contains two parallel pipelines for crystal structure classificatio
 
 | Feature Type      | Accuracy (MLP Train) | Accuracy (Test) | F1 Score (Weighted Average) | PCA Clustering     | Dimensionality           |
 |-------------------|----------------|------------------|----------------|---------------------|---------------------------|
-| SOP & RSF (DC3)   | ~85.25% (with ~35.9% loss)        | ~82.7%           | ~0.84          | Clear clusters      | Lower variance retained   |
-| ACE               | ~84.3% (with ~21.5% loss)      | ~82.6%           | ~0.83          | Less separation     | Higher variance retained  |
+| SOP & RSF (DC3)   | ~82.1% (with ~34.7% loss)        | ~77.4%           | ~0.81          | Clear clusters      | Lower variance retained   |
+| ACE               | ~88.5% (with ~4.6% loss)      | ~82.6%           | ~0.83          | Less separation     | Higher variance retained  |
 
 ---
 
