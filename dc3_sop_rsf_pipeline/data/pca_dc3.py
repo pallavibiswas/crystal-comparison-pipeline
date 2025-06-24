@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 
-X = np.loadtxt('data/X_all.dat')
+X = np.loadtxt('data/X_files/X_all.dat')
 y = np.loadtxt('data/y_all.dat')
 
 X_std = StandardScaler().fit_transform(X)

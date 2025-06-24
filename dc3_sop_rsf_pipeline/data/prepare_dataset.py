@@ -15,8 +15,8 @@ alpha_all = []
 data_dir = "data"
 
 for phase, label in label_map.items():
-    X_path = os.path.join(data_dir, f'X_{phase}.dat')
-    alpha_path = os.path.join(data_dir, f'alpha_{phase}.dat')
+    X_path = os.path.join(data_dir, f'X_files/X_{phase}.dat')
+    alpha_path = os.path.join(data_dir, f'alpha_files/alpha_{phase}.dat')
 
     print(f"loading {X_path} and {alpha_path}...")
 
@@ -36,8 +36,8 @@ X_all = np.vstack(X_all)
 y_all = np.concatenate(y_all)
 alpha_all = np.concatenate(alpha_all)
 
-np.savetxt('data/X_all.dat', X_all, fmt = '%.6e')
+np.savetxt('data/X_files/X_all.dat', X_all, fmt = '%.6e')
 np.savetxt('data/y_all.dat', y_all, fmt = '%d')
-np.savetxt('data/alpha_all.dat', alpha_all, fmt = '%.6f')
+np.savetxt('data/alpha_files/alpha_all.dat', alpha_all, fmt = '%.6f')
 
 print("Data Combined Processing done.")

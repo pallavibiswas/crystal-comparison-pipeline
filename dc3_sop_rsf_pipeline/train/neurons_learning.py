@@ -20,7 +20,7 @@ N = N[i]
 epsilon = epsilon[j]
 
 # Load data set.
-X = read('data/X_all.dat')
+X = read('data/X_files/X_all.dat')
 y = read('data/y_all.dat')
 
 # Normalize features

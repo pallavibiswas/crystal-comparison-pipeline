@@ -102,3 +102,46 @@ fig.savefig("train/training_plots/learning_curve.png")
 plt.close()
 
 ################################################################################
+# Plot grid search.                                                             #
+################################################################################
+
+# Setup
+neurons = [5, 10, 20, 50, 100]
+layers = [1, 2, 3, 4, 5]
+learning_rates = [0.0001, 0.001, 0.002, 0.005, 0.01]
+
+neurons_idx = {n: i for i,n in enumerate(neurons)}
+layers_idx = {l: j for j,l in enumerate(layers)}
+
+for lr in learning_rates:
+  acc = zeros((len(neurons), len(layers)))
+  for n in neurons:
+    for l in layers:
+      fname = f"train/hyperparameters/grid_{n}n_{l}l_{lr}lr.dat"
+      data = loadtxt(fname, skiprows=1)
+      acc[neurons_idx[n], layers_idx[l]] = data[0]
+
+  # Start figure and plot.
+  fig, ax = plt.subplots()
+  im  = ax.imshow(acc, cmap="viridis", origin='lower', aspect='auto')
+  ax.set_xticks(range(len(layers)))
+  ax.set_yticks(range(len(neurons)))
+
+  # Add details.
+  ax.set_xticklabels(layers)
+  ax.set_yticklabels(neurons)
+  ax.set_xlabel('Number of Hidden Layers')
+  ax.set_ylabel('Neurons per Layer')
+  ax.set_title(f'Accuracy for learning rate {lr}')
+
+  for i in range(len(neurons)):
+    for j in range(len(layers)):
+      text = ax.text(j, i, f"{acc[i, j]:.2f}", ha="center", va="center", color="w")
+
+  # Save figure.
+  fig.colorbar(im)
+  fig.tight_layout
+  fig.savefig(f"train/training_plots/gridsearch_{lr}.png")
+  plt.close()
+
+################################################################################

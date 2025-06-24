@@ -13,7 +13,7 @@ from read_functions import read
 f = int(sys.argv[1])/10
 
 # Load data set.
-X = read('data/X_all.dat')
+X = read('data/X_files/X_all.dat')
 y = read('data/y_all.dat')
 idx = random.choice(arange(len(y)), int(f*len(y)), replace=False)
 X = X[idx]

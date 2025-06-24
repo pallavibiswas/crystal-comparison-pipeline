@@ -1,5 +1,6 @@
 from numpy import *
 from ovito.io import import_file
+from ovito.data import Particles
 from auxiliary_functions import compute_sop, compute_rsf, compute_cf
 import sys
 
@@ -13,6 +14,22 @@ coherence_flag = sys.argv[5] # Flag to compute features.
 # Load simulation snapshot.
 pipeline = import_file(in_dir)
 data = pipeline.compute()
+
+#Sort select atoms
+
+ids = data.particles['Particle Identifier'].array
+sorted_indices = ids.argsort()
+filtered_indices = sorted_indices[ids[sorted_indices] <= 4000]
+
+new_particles = Particles()
+for property in data.particles:
+  values = data.particles[property].array[filtered_indices]
+  new_particles.create_property(property, data=values)
+
+for i, obj in enumerate(data.objects):
+  if isinstance(obj, Particles):
+    data.objects[i] = new_particles
+    break
 
 ################################################################################
 # Compute features.                                                            #

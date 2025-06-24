@@ -12,14 +12,13 @@ y = read('data/y_all.dat')
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=42)
 
-
 imputer = SimpleImputer(strategy="mean")
 X_train = imputer.fit_transform(X_train)
 X_test = imputer.transform(X_test)
 
 NN = make_pipeline(
     StandardScaler(), 
-    MLPClassifier(hidden_layer_sizes=(20,), early_stopping=True, learning_rate_init=0.005, verbose=1)) 
+    MLPClassifier(hidden_layer_sizes=(100,), early_stopping=True, learning_rate_init=0.005, verbose=1)) 
 NN.fit(X_train,y_train)
 
 joblib.dump(NN,'model/neural_network.pkl')

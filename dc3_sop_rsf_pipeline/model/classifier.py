@@ -15,7 +15,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratif
 
 NN = make_pipeline(
     StandardScaler(), 
-    MLPClassifier(hidden_layer_sizes=(100,100,100), early_stopping=True, learning_rate_init=0.005, verbose=1)) 
+    MLPClassifier(hidden_layer_sizes=(50,50,50,50), early_stopping=True, learning_rate_init=0.01, verbose=1)) 
 NN.fit(X_train,y_train)
 
 joblib.dump(NN,'model/neural_network.pkl')
